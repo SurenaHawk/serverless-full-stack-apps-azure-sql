@@ -30,6 +30,7 @@ namespace ShowBusData
             Int32.TryParse(req.Query["rid"], out rid);
             Int32.TryParse(req.Query["gid"], out gid);
             
+            
             using(var conn = new SqlConnection(AZURE_CONN_STRING))
             {
                 var result = await conn.QuerySingleOrDefaultAsync<string>(
